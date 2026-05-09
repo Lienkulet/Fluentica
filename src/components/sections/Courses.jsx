@@ -35,7 +35,7 @@ const courses = [
 
 const Courses = () => {
   return (
-    <section className='py-20 bg-white'>
+    <section className='py-20 bg-white' id='cursuri'>
       <Container>
         <SectionHeader
           title="Cursuri de Engleză"

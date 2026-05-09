@@ -31,7 +31,7 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section className='overflow-hidden -mt-60'>
+    <section className='overflow-hidden -mt-60' id='despre'>
       <BlueTop />
 
       <div className='bg-blue-navy py-16'>

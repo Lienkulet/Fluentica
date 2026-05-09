@@ -6,7 +6,7 @@ import CTABtn from '../UI/CTABtn'
 
 const Hero = () => {
   return (
-    <section className='relative w-full min-h-screen overflow-hidden'>
+    <section className='relative w-full min-h-screen overflow-hidden' id='#home'>
       <Image
         src="/assets/layout/Hero.svg"
         alt="hero background"
