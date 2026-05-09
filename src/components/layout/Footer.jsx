@@ -22,21 +22,21 @@ const Footer = () => {
         <div className='absolute inset-0 flex flex-col items-end pr-[8%]'>
 
           <div className='flex flex-col gap-8 w-[50%] flex-1 pt-10'>
-            <div className='flex flex-col gap-8 flex-1 justify-center'>
+            <div className='flex flex-col gap-11.5 flex-1 justify-center'>
               <LogoIcon />
-              <div className='flex flex-row gap-20'>
+              <div className='flex flex-row gap-30.25'>
                 <div>
-                  <p className='text-white font-bold text-lg mb-4'>Contacte:</p>
+                  <p className='text-white font-semibold text-xl mb-4 leading-[100%] tracking-[1%]'>Contacte:</p>
                   <ul className='flex flex-col gap-3'>
-                    <li className='flex items-center gap-3 text-white'>
+                    <li className='flex items-center gap-3.75 text-lila text-lg font-regular leading-[150%] tracking-[1%]'>
                       <PhoneIcon />
                       +373 69 63 48 84
                     </li>
-                    <li className='flex items-center gap-3 text-white'>
+                    <li className='flex items-center gap-3.75 text-lila text-lg font-regular leading-[150%] tracking-[1%]'>
                       <EmailIcon />
                       fluenticaenglish@gmail.com
                     </li>
-                    <li className='flex items-center gap-3 text-white'>
+                    <li className='flex items-center gap-3.75 text-lila text-lg font-regular leading-[150%] tracking-[1%]'>
                       <HomeIcon />
                       str. Gavriil-Bănulescu Bodoni 59
                     </li>
@@ -44,7 +44,7 @@ const Footer = () => {
                 </div>
 
                 <div>
-                  <p className='text-white font-bold text-lg mb-4'>Suntem pe social media:</p>
+                  <p className='text-white font-semibold text-xl mb-3.75 leading-[100%] tracking-[1%]'>Suntem pe social media:</p>
                   <div className='flex items-center gap-5'>
                     <a href="https://instagram.com/fluentica.md" target="_blank" rel="noopener noreferrer" className='hover:opacity-70 transition-opacity duration-200'>
                       <InstagramIcon />
