@@ -1,12 +1,9 @@
 'use client'
 
-import React, { useState } from 'react'
+import React from 'react'
 import Container from '../layout/Container'
 import TestimonialCard from '../cards/TestimonialCard'
-import LeftSliderArrowIcon from '../icons/LeftSliderArrowIcon'
-import RightSliderArrowIcon from '../icons/RightSliderArrowIcon'
-import FilledDotIcon from '../icons/FilledDotIcon'
-import EmptyDotIcon from '../icons/EmptyDotIcon'
+import Slider from '../UI/Slider'
 
 const testimonials = [
   {
@@ -36,11 +33,6 @@ const testimonials = [
 ]
 
 const Testimonials = () => {
-  const [current, setCurrent] = useState(0)
-
-  const prev = () => setCurrent((i) => (i === 0 ? testimonials.length - 1 : i - 1))
-  const next = () => setCurrent((i) => (i === testimonials.length - 1 ? 0 : i + 1))
-
   return (
     <section className='py-20 bg-white' id='recenzii'>
       <Container>
@@ -63,23 +55,10 @@ const Testimonials = () => {
 
         {/* Mobile slider */}
         <div className='md:hidden'>
-          <TestimonialCard name={testimonials[current].name} quote={testimonials[current].quote} />
-
-          <div className='flex items-center justify-center gap-6 mt-8'>
-            <button onClick={prev} aria-label='Previous' className='cursor-pointer'>
-              <LeftSliderArrowIcon />
-            </button>
-
-            <div className='flex items-center gap-2'>
-              {testimonials.map((_, i) =>
-                i === current ? <FilledDotIcon key={i} /> : <EmptyDotIcon key={i} />
-              )}
-            </div>
-
-            <button onClick={next} aria-label='Next' className='cursor-pointer'>
-              <RightSliderArrowIcon />
-            </button>
-          </div>
+          <Slider
+            items={testimonials}
+            renderItem={(t) => <TestimonialCard name={t.name} quote={t.quote} />}
+          />
         </div>
       </Container>
     </section>

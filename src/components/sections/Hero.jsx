@@ -12,27 +12,36 @@ const Hero = () => {
         alt="hero background"
         fill
         priority
-        className='object-cover object-top'
+        className='object-cover object-top hidden md:block'
+      />
+
+      <Image
+        src="/assets/hero/mobilebg.svg"
+        alt="hero background"
+        fill
+        priority
+        className='object-contain object-top block md:hidden'
       />
 
       {/* Mobile hero image */}
-      <div className='absolute right-0 bottom-0 w-[68%] h-[65%] md:hidden z-5'>
+      <div className='absolute right-0 bottom-35 w-67.5 h-67.5 md:hidden z-5 pb-20'>
         <Image
-          src="/assets/hero/mobilehero.png"
+          src="/assets/hero/mobile-home/Mobile/IMG.svg"
           alt="hero students"
           fill
           priority
-          className='object-contain object-bottom-right'
+          className='block md:hidden'
         />
       </div>
 
       <div className='relative z-10 flex items-start min-h-screen pt-28 pb-20 md:items-center md:pt-32'>
         <Container>
           <div className='max-w-xl'>
-            <h1 className='text-white font-extrabold text-[2.4rem] md:text-5xl leading-[1.1] mb-4'>
+            <h1 className='text-white font-extrabold text-[28px] mt-9 md:mt-0 md:text-5xl leading-[1.1] mb-1.75 md:mb-4'>
               Află nivelul tău de<br />engleză în doar 5 minute
             </h1>
-            <p className='text-lila text-lg md:text-[23px] leading-[1.4] tracking-[0.02em] mb-10'>
+            <p className='text-lila text-sm md:text-[23px] leading-[1.2] md:leading-[1.4] 
+              tracking-[0.02em] mb-5 md:mb-10'>
               Programează-te la o consultație gratuită<br />
               și află ce curs ți se potrivește.
             </p>
