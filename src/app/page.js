@@ -1,11 +1,13 @@
-import BlueBottom from "@/components/shapes/BlueBottom";
-import BlueTop from "@/components/shapes/BlueTop";
+import Courses from "@/components/Courses";
+import Hero from "@/components/Hero";
+import WhyUs from "@/components/WhyUs";
 
 export default function Home() {
   return (
     <>
-      <BlueTop />
-      <BlueBottom />
+      <Hero />
+      <Courses />
+      <WhyUs />
     </>
   );
 }
