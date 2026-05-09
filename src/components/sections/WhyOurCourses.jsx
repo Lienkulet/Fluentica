@@ -42,7 +42,7 @@ const features = [
 
 const WhyOurCourses = () => {
   return (
-    <section className='py-20 bg-white'>
+    <section className='py-10 md:py-20 bg-white'>
       <Container>
         <SectionHeader
           title={<>De ce cursurile de engleză<br />Fluentica dau rezultate</>}

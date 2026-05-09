@@ -45,8 +45,8 @@ const Slider = ({ items, renderItem }) => {
       </div>
 
       <div className='flex items-center justify-center gap-6 mt-8'>
-        <button onClick={prev} aria-label='Previous' className='cursor-pointer'>
-          <LeftSliderArrowIcon />
+        <button onClick={prev} aria-label='Previous' className='cursor-pointer rotate-180'>
+          <RightSliderArrowIcon />
         </button>
 
         <div className='flex items-center gap-2'>

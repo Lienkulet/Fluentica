@@ -4,43 +4,43 @@ import Container from '../layout/Container'
 
 const Register = () => {
   return (
-    <section id='contact' className='py-20 bg-white'>
+    <section id='contact' className='py-10 md:py-20 bg-white'>
       <Container>
-        <div className='bg-blue-navy rounded-[40px] md:rounded-[74px] px-6 py-10 md:pl-25.25 md:pr-45.25 md:pt-28.75
+        <div className='bg-blue-navy  rounded-[20px] md:rounded-[74px] px-5 py-9.5 md:pl-25.25 md:pr-45.25 md:pt-28.75
           flex flex-col md:flex-row md:items-center md:justify-between md:gap-16.75'>
 
-          <div className='flex flex-col gap-8 md:gap-14.5 md:pb-28.75 z-10 md:w-fit'>
+          <div className='flex flex-col gap-6 md:gap-14.5 md:pb-28.75 z-10 md:w-fit'>
             <div>
-              <h2 className='text-white font-extrabold text-3xl md:text-5xl leading-[1.1] tracking-normal mb-4 md:mb-5'>
+              <h2 className='text-white font-extrabold text-[28px] md:text-5xl leading-[1.1] tracking-normal mb-1.75 md:mb-5'>
                 Înscrie-te pentru o<br />testare gratuită
               </h2>
-              <p className='text-lila text-base md:text-xl leading-[1.4] tracking-[2%] font-normal'>
+              <p className='text-lila text-sm md:text-xl leading-[1.2] md:leading-[1.4] tracking-[2%] font-normal'>
                 Evaluăm nivelul tău de engleză și îți oferim toate
                 detaliile despre curs, program și preț după testare.
               </p>
             </div>
 
-            <form className='flex flex-col gap-4 md:gap-5.5'>
+            <form className='flex flex-col gap-3.5 md:gap-5.5'>
               <input
                 type='text'
                 placeholder='Nume, Prenume'
                 className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
                  bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                 text-base font-medium leading-[1.4] tracking-[2%]'
+                 text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
               />
               <input
                 type='tel'
                 placeholder='Număr de telefon'
                 className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
                  bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                 text-base font-medium leading-[1.4] tracking-[2%]'
+                 text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
               />
               <input
                 type='email'
                 placeholder='E-mail'
                 className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
                  bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                 text-base font-medium leading-[1.4] tracking-[2%]'
+                 text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
               />
               <button
                 type='submit'
