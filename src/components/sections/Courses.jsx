@@ -42,7 +42,14 @@ const Courses = () => {
           subtitle="Oferim cursuri de engleză online și offline pentru copii, adolescenți și adulți, inclusiv lecții individuale, cu profesori dedicați și metode moderne de învățare."
         />
 
-        <div className='flex flex-col gap-13 z-20'>
+        {/* Mobile layout — single column */}
+        <div className='md:hidden flex flex-col gap-4'>
+          {courses.map((c) => <CourseCard key={c.title} {...c} />)}
+          <CourseCardOrange />
+        </div>
+
+        {/* Desktop layout */}
+        <div className='hidden md:flex flex-col gap-13 z-20'>
           <div className='grid grid-cols-3 gap-8.5'>
             {courses.slice(0, 3).map((c) => <CourseCard key={c.title} {...c} />)}
           </div>

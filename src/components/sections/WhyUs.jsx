@@ -42,7 +42,7 @@ const WhyUs = () => {
             dark
           />
 
-          <div className='grid grid-cols-4 gap-7.75'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-7.75'>
             {reasons.map((r) => (
               <WhyUsCard key={r.title} img={r.img} title={r.title} desc={r.desc} />
             ))}
