@@ -1,8 +1,8 @@
 import React from 'react'
 
-const LightningIcon = () => {
+const LightningIcon = ( {size = "25"} ) => {
     return (
-        <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <svg width={size} height={size} viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
             <rect width="25" height="25" rx="12.5" fill="white" />
             <mask id="mask0_445_39" style={{maskType:'luminance'}} maskUnits="userSpaceOnUse" x="7" y="4" width="11" height="17">
                 <path d="M7.08301 4.16675H17.9163V20.8334H7.08301V4.16675Z" fill="white" />

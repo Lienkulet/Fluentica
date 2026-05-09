@@ -49,14 +49,14 @@ const WhyOurCourses = () => {
           subtitle={<>Fluență în <strong>8 săptămâni</strong>, suport <strong>permanent</strong> și <strong>beneficii</strong> financiare pentru cursanți și familii.</>}
         />
 
-        <div className='flex flex-col gap-4 md:gap-12.5 mt-12'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-13.75'>
+        <div className='flex flex-col gap-5 md:gap-12.5 mt-12'>
+          <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-13.75'>
             {promos.map((p, i) => (
               <PromoCard key={i} icon={p.icon} title={p.title} description={p.description} />
             ))}
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-4 md:gap-9.25'>
+          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-9.25'>
             {features.map((f, i) => (
               <FeatureCard key={i} icon={f.icon} title={f.title} description={f.description} />
             ))}
