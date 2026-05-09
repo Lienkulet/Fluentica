@@ -35,7 +35,7 @@ const courses = [
 
 const Courses = () => {
   return (
-    <section className='py-20 bg-white' id='cursuri'>
+    <section className='py-12.5 md:py-20 bg-white' id='cursuri'>
       <Container>
         <SectionHeader
           title="Cursuri de Engleză"
@@ -43,7 +43,7 @@ const Courses = () => {
         />
 
         {/* Mobile layout — single column */}
-        <div className='md:hidden flex flex-col gap-4'>
+        <div className='md:hidden flex flex-col gap-5'>
           {courses.map((c) => <CourseCard key={c.title} {...c} />)}
           <CourseCardOrange />
         </div>
@@ -62,8 +62,9 @@ const Courses = () => {
           <CourseCardOrange />
         </div>
 
-        <div className='flex justify-center mt-12 z-20 relative'>
-          <CTABtn title="Află ce curs ți se potrivește" />
+        <div className='flex justify-center mt-6 md:mt-12 z-20 relative'>
+          <CTABtn title="Află ce curs ți se potrivește" className='hidden md:flex' />
+          <CTABtn title="Vreau consultație gratuită!" className='flex md:hidden w-full' />
         </div>
       </Container>
     </section>

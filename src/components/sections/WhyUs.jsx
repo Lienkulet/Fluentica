@@ -31,7 +31,7 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section className='overflow-hidden -mt-60' id='despre'>
+    <section className='overflow-hidden mt-14.25 md:-mt-60' id='despre'>
       <BlueTop />
 
       <div className='bg-blue-navy py-16'>
@@ -42,14 +42,14 @@ const WhyUs = () => {
             dark
           />
 
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-4 md:gap-7.75'>
+          <div className='grid grid-cols-1 md:grid-cols-4 gap-2.75 md:gap-7.75'>
             {reasons.map((r) => (
               <WhyUsCard key={r.title} img={r.img} title={r.title} desc={r.desc} />
             ))}
           </div>
 
           <div className='flex justify-center mt-11.5'>
-            <CTABtn title="Află ce curs ți se potrivește" />
+            <CTABtn title="Află ce curs ți se potrivește" className='hidden md:flex' />
           </div>
         </Container>
       </div>

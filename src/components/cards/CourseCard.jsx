@@ -8,7 +8,7 @@ const CourseCard = ({ img, title, desc }) => (
       <Image src={img} alt={title} fill className='object-contain object-bottom' />
     </div>
     <div className='flex-1 md:max-w-50 mb-5 md:mb-7'>
-      <h3 className='text-blue-navy group-hover:text-white font-extrabold text-xl md:text-[26px] leading-[1.3] mb-2'>{title}</h3>
+      <h3 className='text-blue-navy group-hover:text-white font-extrabold text-xl md:text-[26px] leading-[1.1] md:leading-[1.3] mb-1.25'>{title}</h3>
       <p className='text-blue-grey group-hover:text-lila text-sm md:text-base leading-[1.4] tracking-[2%] font-medium'>{desc}</p>
     </div>
   </article>
