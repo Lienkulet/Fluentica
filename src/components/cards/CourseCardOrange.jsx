@@ -1,0 +1,35 @@
+import Image from 'next/image'
+import Link from 'next/link'
+import React from 'react'
+import ArrowIconOrange from '../icons/ArrowIconOrange'
+import ArrowIconBlue from '../icons/ArrowIconBlue'
+
+const CourseCardOrange = () => (
+  <article className='flex flex-row items-end bg-orange1 hover:bg-blue-navy group px-11 pt-7 pb-0 
+  max-w-195.5 w-full justify-self-center self-center drop-shadow-xl
+   rounded-2xl shadow-sm overflow-hidden gap-4.5 transition-colors duration-400'>
+    <div className='relative w-73.25 h-55.75 shrink-0 self-end'>
+      <Image src='/assets/courses/corporate.png' alt='Engleză Corporativă' fill
+        className='object-contain object-bottom' />
+    </div>
+    <div className='max-w-95.25 mb-7'>
+      <h3 className='text-white font-extrabold text-[26px] leading-[1.3] mb-2.5'>
+        Engleză Corporativă
+      </h3>
+      <p className='text-white text-base leading-[1.4] tracking-[2%] font-medium mb-4'>
+        Training personalizat pentru companii, axat pe comunicare de afaceri, prezentări, e-mailuri profesionale și negocieri eficiente.
+      </p>
+      <Link href='#contact'
+        className='group flex items-center gap-2 w-fit pl-5 pr-1.75 py-0.5 rounded-[100px]
+      
+      text-blue-grey bg-white text-4 font-medium leading-[1.4] tracking-[2%]
+      transition-colors duration-200'>
+        Vezi mai mult...
+        <ArrowIconOrange className='group-hover:hidden transition-colors duration-400' />
+        <ArrowIconBlue className='hidden group-hover:block transition-colors duration-400' />
+      </Link>
+    </div>
+  </article>
+)
+
+export default CourseCardOrange

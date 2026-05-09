@@ -1,8 +1,8 @@
 import React from 'react'
 import Link from 'next/link'
-import InstagramOrange from './icons/InstagramOrange'
-import PhoneOrange from './icons/PhoneOrange'
-import FacebookOrange from './icons/FacebookOrange'
+import InstagramOrange from '../icons/InstagramOrange'
+import PhoneOrange from '../icons/PhoneOrange'
+import FacebookOrange from '../icons/FacebookOrange'
 
 const HeroMenu = () => {
     return (

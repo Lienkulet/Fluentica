@@ -1,13 +1,13 @@
-import Courses from "@/components/Courses";
-import Hero from "@/components/Hero";
-import WhyUs from "@/components/WhyUs";
+import Courses from "@/components/sections/Courses";
+import Hero from "@/components/sections/Hero";
+import WhyUs from "@/components/sections/WhyUs";
 
 export default function Home() {
   return (
     <>
       <Hero />
       <Courses />
-      <WhyUs />
+      {/* <WhyUs /> */}
     </>
   );
 }

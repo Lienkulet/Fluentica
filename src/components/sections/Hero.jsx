@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import React from 'react'
-import Container from './layout/Container'
+import Container from '../layout/Container'
 import HeroMenu from './HeroMenu'
-import CTABtn from './UI/CTABtn'
+import CTABtn from '../UI/CTABtn'
 
 const Hero = () => {
   return (
@@ -25,7 +25,7 @@ const Hero = () => {
               Programează-te la o consultație gratuită<br />
               și află ce curs ți se potrivește.
             </p>
-            <CTABtn />
+            <CTABtn title="Vreau consultație gratuită!" />
           </div>
         </Container>
       </div>
