@@ -1,9 +1,10 @@
-import Image from 'next/image'
 import React from 'react'
 import Container from '../layout/Container'
 import BlueTop from '../shapes/BlueTop'
 import BlueBottom from '../shapes/BlueBottom'
-import Link from 'next/link'
+import CTABtn from '../UI/CTABtn'
+import WhyUsCard from '../cards/WhyUsCard'
+import SectionHeader from '../UI/SectionHeader'
 
 const reasons = [
   {
@@ -30,36 +31,25 @@ const reasons = [
 
 const WhyUs = () => {
   return (
-    <section>
+    <section className='overflow-hidden -mt-60'>
       <BlueTop />
 
       <div className='bg-blue-navy py-16'>
         <Container>
-          <div className='text-center mb-12'>
-            <h2 className='text-white font-bold text-4xl mb-4'>De ce Fluentica?</h2>
-            <p className='text-lila text-base max-w-md mx-auto leading-relaxed'>
-              Noi oferim metode moderne, profesori dedicați și rezultate reale în învățarea limbii engleze.
-            </p>
-          </div>
+          <SectionHeader
+            title="De ce Fluentica?"
+            subtitle="Noi oferim metode moderne, profesori dedicați și rezultate reale în învățarea limbii engleze."
+            dark
+          />
 
-          <div className='grid grid-cols-4 gap-5'>
+          <div className='grid grid-cols-4 gap-7.75'>
             {reasons.map((r) => (
-              <div key={r.title} className='bg-white rounded-2xl overflow-hidden shadow-sm'>
-                <div className='relative w-full h-44'>
-                  <Image src={r.img} alt={r.title} fill className='object-cover' />
-                </div>
-                <div className='p-5'>
-                  <h3 className='text-blue-navy font-bold text-lg mb-2'>{r.title}</h3>
-                  <p className='text-gray-500 text-sm leading-relaxed'>{r.desc}</p>
-                </div>
-              </div>
+              <WhyUsCard key={r.title} img={r.img} title={r.title} desc={r.desc} />
             ))}
           </div>
 
-          <div className='flex justify-center mt-12'>
-            <Link href='#contact' className='px-8 py-4 rounded-full bg-orange1 hover:bg-orange2 text-white font-semibold transition-colors duration-300'>
-              Află ce curs ți se potrivește
-            </Link>
+          <div className='flex justify-center mt-11.5'>
+            <CTABtn title="Află ce curs ți se potrivește" />
           </div>
         </Container>
       </div>

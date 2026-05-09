@@ -1,9 +1,9 @@
 import React from 'react'
 import Container from '../layout/Container'
-import Link from 'next/link'
 import CourseCard from '../cards/CourseCard'
 import CourseCardOrange from '../cards/CourseCardOrange'
 import CTABtn from '../UI/CTABtn'
+import SectionHeader from '../UI/SectionHeader'
 
 const courses = [
   {
@@ -37,15 +37,12 @@ const Courses = () => {
   return (
     <section className='py-20 bg-white'>
       <Container>
-        <div className='text-center mb-12'>
-          <h2 className='text-blue-navy font-bold text-4xl mb-4'>Cursuri de Engleză</h2>
-          <p className='text-gray-500 text-base max-w-xl mx-auto leading-relaxed'>
-            Oferim cursuri de engleză online și offline pentru copii, adolescenți și adulți,
-            inclusiv lecții individuale, cu profesori dedicați și metode moderne de învățare.
-          </p>
-        </div>
+        <SectionHeader
+          title="Cursuri de Engleză"
+          subtitle="Oferim cursuri de engleză online și offline pentru copii, adolescenți și adulți, inclusiv lecții individuale, cu profesori dedicați și metode moderne de învățare."
+        />
 
-        <div className='flex flex-col gap-13'>
+        <div className='flex flex-col gap-13 z-20'>
           <div className='grid grid-cols-3 gap-8.5'>
             {courses.slice(0, 3).map((c) => <CourseCard key={c.title} {...c} />)}
           </div>
@@ -58,7 +55,7 @@ const Courses = () => {
           <CourseCardOrange />
         </div>
 
-        <div className='flex justify-center mt-12'>
+        <div className='flex justify-center mt-12 z-20 relative'>
           <CTABtn title="Află ce curs ți se potrivește" />
         </div>
       </Container>
