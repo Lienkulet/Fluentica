@@ -45,7 +45,7 @@ const bottomCards = [
 
 const WhyB2B = () => {
   return (
-    <section className='mt-14.25 md:-mt-60' id='despre'>
+    <section className='-mt-14.25 md:-mt-110' id='despre'>
       <B2bTop />
       <div className='bg-blue-navy py-16'>
         <Container>

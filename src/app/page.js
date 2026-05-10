@@ -36,7 +36,11 @@ const testimonials = [
 export default function Home() {
   return (
     <>
-      <Hero />
+      <Hero 
+        title={<span> Află nivelul tău de<br />engleză în doar 5 minute</span>}
+        subtitle={<span> Programează-te la o consultație gratuită<br />
+              și află ce curs ți se potrivește.</span>}
+      />
       <Courses />
       <WhyUs />
       <WhyOurCourses />
