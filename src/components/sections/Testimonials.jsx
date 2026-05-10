@@ -4,12 +4,13 @@ import React from 'react'
 import Container from '../layout/Container'
 import TestimonialCard from '../cards/TestimonialCard'
 import Slider from '../UI/Slider'
+import FadeInView from '../UI/FadeInView'
 
 const Testimonials = ({ testimonials }) => {
   return (
     <section className='py-20 bg-white' id='recenzii'>
       <Container>
-        <div className='text-center mb-13'>
+        <FadeInView className='text-center mb-13'>
           <h2 className='text-blue-navy font-extrabold text-4xl md:text-5xl leading-[1.1] mb-2.5'>
             Ce spun studenții noștri?
           </h2>
@@ -17,22 +18,24 @@ const Testimonials = ({ testimonials }) => {
             Experiențe <strong>reale</strong> ale studenților noștri,<br />
             de la începători la nivel avansat.
           </p>
-        </div>
+        </FadeInView>
 
         {/* Desktop grid */}
         <div className='hidden md:grid grid-cols-3 gap-10.75'>
-          {testimonials.map((t) => (
-            <TestimonialCard key={t.name} name={t.name} quote={t.quote} />
+          {testimonials.map((t, i) => (
+            <FadeInView key={t.name} delay={i * 0.1}>
+              <TestimonialCard name={t.name} quote={t.quote} />
+            </FadeInView>
           ))}
         </div>
 
         {/* Mobile slider */}
-        <div className='md:hidden'>
+        <FadeInView className='md:hidden'>
           <Slider
             items={testimonials}
             renderItem={(t) => <TestimonialCard name={t.name} quote={t.quote} />}
           />
-        </div>
+        </FadeInView>
       </Container>
     </section>
   )

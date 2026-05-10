@@ -3,6 +3,7 @@ import Container from '../layout/Container'
 import SectionHeader from '../UI/SectionHeader'
 import PromoCard from '../cards/PromoCard'
 import FeatureCard from '../cards/FeatureCard'
+import FadeInView from '../UI/FadeInView'
 import PromotionIcon from '../icons/PromotionIcon'
 import GlobeIcon from '../icons/GlobeIcon'
 import NotebookIcon from '../icons/NotebookIcon'
@@ -44,21 +45,27 @@ const WhyOurCourses = () => {
   return (
     <section className='py-10 md:py-20 bg-white'>
       <Container>
-        <SectionHeader
-          title={<>De ce cursurile de engleză<br />Fluentica dau rezultate</>}
-          subtitle={<>Fluență în <strong>8 săptămâni</strong>, suport <strong>permanent</strong> și <strong>beneficii</strong> financiare pentru cursanți și familii.</>}
-        />
+        <FadeInView>
+          <SectionHeader
+            title={<>De ce cursurile de engleză<br />Fluentica dau rezultate</>}
+            subtitle={<>Fluență în <strong>8 săptămâni</strong>, suport <strong>permanent</strong> și <strong>beneficii</strong> financiare pentru cursanți și familii.</>}
+          />
+        </FadeInView>
 
         <div className='flex flex-col gap-5 md:gap-12.5 mt-12'>
           <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-13.75'>
             {promos.map((p, i) => (
-              <PromoCard key={i} icon={p.icon} title={p.title} description={p.description} />
+              <FadeInView key={i} delay={i * 0.12}>
+                <PromoCard icon={p.icon} title={p.title} description={p.description} />
+              </FadeInView>
             ))}
           </div>
 
           <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-9.25'>
             {features.map((f, i) => (
-              <FeatureCard key={i} icon={f.icon} title={f.title} description={f.description} />
+              <FadeInView key={i} delay={i * 0.1}>
+                <FeatureCard icon={f.icon} title={f.title} description={f.description} />
+              </FadeInView>
             ))}
           </div>
         </div>

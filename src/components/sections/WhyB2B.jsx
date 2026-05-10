@@ -5,6 +5,7 @@ import Container from '../layout/Container'
 import FeatureCard from '../cards/FeatureCard'
 import B2BPromoCard from '../cards/B2BPromoCard'
 import NavyIcon from '../UI/NavyIcon'
+import FadeInView from '../UI/FadeInView'
 import PromotionIcon from '../icons/PromotionIcon'
 import GlobeIcon from '../icons/GlobeIcon'
 import NotebookIcon from '../icons/NotebookIcon'
@@ -53,26 +54,32 @@ const WhyB2B = () => {
 
             {/* Row 1: text | B2BPromoCard | B2BPromoCard */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-9 items-start'>
-              <div className='md:w-[384px] flex flex-col gap-5 align-top'>
-                <h2 className='text-white text-center md:text-start font-extrabold text-[28px] 
-                md:w-[384px] max-h-39.75 md:text-[48px] leading-[110%] tracking-[-1%]'>
-                  De ce cursurile de engleză Fluentica dau rezultate
-                </h2>
-                <p className='text-lila text-center md:text-start text-sm font-medium md:text-xl 
-                leading-[1.4] tracking-[2%]'>
-                  Programe de Business English adaptate companiilor, cu focus pe comunicare practică și 
-                  progres măsurabil.
-                </p>
-              </div>
+              <FadeInView x={-24} y={0}>
+                <div className='md:w-[384px] flex flex-col gap-5 align-top'>
+                  <h2 className='text-white text-center md:text-start font-extrabold text-[28px]
+                  md:w-[384px] max-h-39.75 md:text-[48px] leading-[110%] tracking-[-1%]'>
+                    De ce cursurile de engleză Fluentica dau rezultate
+                  </h2>
+                  <p className='text-lila text-center md:text-start text-sm font-medium md:text-xl
+                  leading-[1.4] tracking-[2%]'>
+                    Programe de Business English adaptate companiilor, cu focus pe comunicare practică și
+                    progres măsurabil.
+                  </p>
+                </div>
+              </FadeInView>
               {topCards.map((c, i) => (
-                <B2BPromoCard key={i} promo={c.promo} icon={c.icon} title={c.title} description={c.description} />
+                <FadeInView key={i} delay={0.1 + i * 0.1}>
+                  <B2BPromoCard promo={c.promo} icon={c.icon} title={c.title} description={c.description} />
+                </FadeInView>
               ))}
             </div>
 
             {/* Row 2: feature | feature | feature */}
             <div className='grid grid-cols-1 md:grid-cols-3 gap-9'>
               {bottomCards.map((c, i) => (
-                <FeatureCard key={i} icon={c.icon} title={c.title} description={c.description} />
+                <FadeInView key={i} delay={i * 0.1}>
+                  <FeatureCard icon={c.icon} title={c.title} description={c.description} />
+                </FadeInView>
               ))}
             </div>
 

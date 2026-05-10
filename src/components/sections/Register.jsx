@@ -1,6 +1,7 @@
 import Image from 'next/image'
 import React from 'react'
 import Container from '../layout/Container'
+import FadeInView from '../UI/FadeInView'
 
 const Register = ({ img, title, desc }) => {
   return (
@@ -10,7 +11,7 @@ const Register = ({ img, title, desc }) => {
          md:pr-28.75 md:pt-28.75
           flex flex-col md:flex-row md:items-end md:justify-between md:gap-16.75'>
 
-          <div className='flex flex-col gap-6 md:gap-14.5 md:pb-28.75 z-10 md:w-fit max-w-118.75'>
+          <FadeInView x={-24} y={0} className='flex flex-col gap-6 md:gap-14.5 md:pb-28.75 z-10 md:w-fit max-w-118.75'>
             <div>
               <h2 className='text-white font-extrabold text-[28px] md:text-5xl leading-[1.1] tracking-normal mb-1.75 md:mb-5'>
                 {/* Înscrie-te pentru o<br />testare gratuită */}
@@ -54,7 +55,7 @@ const Register = ({ img, title, desc }) => {
                 Vreau consultație gratuită!
               </button>
             </form>
-          </div>
+          </FadeInView>
           <div className='hidden md:flex relative w-117.25 h-153.5'> 
             {/* // w-91.75  h-157.25 */}
             <Image

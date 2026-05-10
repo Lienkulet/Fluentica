@@ -11,6 +11,7 @@ import FacebookOrange from '../icons/FacebookOrange'
 import PhoneOrange from '../icons/PhoneOrange'
 import { usePathname } from 'next/navigation'
 import { useNavMenu } from '@/context/NavMenuContext'
+import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
@@ -36,43 +37,47 @@ const Navbar = () => {
         ${scrolled ? 'bg-blue-navy' : 'bg-transparent'}`}>
         <Container>
           <div className='flex flex-row items-center w-full gap-20'>
-            <Link href='/' className='flex md:hidden'><LogoIcon isB2B={false} /></Link>
-            <Link href='/' className='hidden md:flex'><LogoIcon isB2B={isB2B && !scrolled} /></Link>
+            <motion.div className='flex md:hidden' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
+              <Link href='/'><LogoIcon isB2B={false} /></Link>
+            </motion.div>
+            <motion.div className='hidden md:flex' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
+              <Link href='/'><LogoIcon isB2B={isB2B && !scrolled} /></Link>
+            </motion.div>
 
             {/* Desktop nav links */}
             <ul className='hidden md:flex flex-row items-center gap-16'>
-              <li className={`${isB2B && !scrolled ? 'text-blue-navy' : 'text-white'} hover:text-orange1 text-[16px] font-medium letter-spacing-[4%] 
-              cursor-pointer transition-all duration-300`}>
-                <Link href='/'>AFLĂ NIVELUL</Link>
-              </li>
-              <li className={`${isB2B && !scrolled ? 'text-blue-navy' : 'text-white'} relative hover:text-orange1 text-[16px] font-medium 
-              letter-spacing-[4%] cursor-pointer transition-all duration-300`}>
-                <span className='absolute -top-7 left-1/2 -translate-x-1/9'>
-                  <NewIcon />
-                </span>
-                <a href='#cursuri'>CURSURI</a>
-              </li>
-              <li className={`${isB2B ? 'text-orange1' : 'text-white'} hover:text-orange1 text-[16px] font-medium letter-spacing-[4%]
-               cursor-pointer transition-all duration-300`}>
-                <Link href='/b2benglish'>B2B ENGLISH</Link>
-              </li>
-              <li className={`${isB2B && !scrolled ? 'text-blue-navy' : 'text-white'} hover:text-orange1 text-[16px] font-medium letter-spacing-[4%] 
-              cursor-pointer transition-all duration-300`}>
-                <a href='#despre'>DESPRE NOI</a>
-              </li>
-              <li className={`${isB2B && !scrolled ? 'text-blue-navy' : 'text-white'} hover:text-orange1 text-[16px] font-medium letter-spacing-[4%] 
-              cursor-pointer transition-all duration-300`}>
-                <a href='#recenzii'>RECENZII</a>
-              </li>
+              {[
+                { label: 'AFLĂ NIVELUL', el: <Link href='/'>AFLĂ NIVELUL</Link>, color: isB2B && !scrolled ? 'text-blue-navy' : 'text-white' },
+                { label: 'CURSURI',      el: <a href='#cursuri'>CURSURI</a>,     color: isB2B && !scrolled ? 'text-blue-navy' : 'text-white', badge: true },
+                { label: 'B2B ENGLISH', el: <Link href='/b2benglish'>B2B ENGLISH</Link>, color: isB2B ? 'text-orange1' : 'text-white' },
+                { label: 'DESPRE NOI',  el: <a href='#despre'>DESPRE NOI</a>,    color: isB2B && !scrolled ? 'text-blue-navy' : 'text-white' },
+                { label: 'RECENZII',    el: <a href='#recenzii'>RECENZII</a>,    color: isB2B && !scrolled ? 'text-blue-navy' : 'text-white' },
+              ].map(({ label, el, color, badge }, i) => (
+                <motion.li
+                  key={label}
+                  className={`${color} hover:text-orange1 text-[16px] font-medium letter-spacing-[4%] cursor-pointer transition-colors duration-300 ${badge ? 'relative' : ''}`}
+                  initial={{ opacity: 0, y: -10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.4, delay: 0.15 + i * 0.07, ease: [0.25, 0.1, 0.25, 1] }}
+                >
+                  {badge && <span className='absolute -top-7 left-1/2 -translate-x-1/9'><NewIcon /></span>}
+                  {el}
+                </motion.li>
+              ))}
             </ul>
 
-            <PhoneBtn className='hidden lg:flex' />
+            <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 0.4, delay: 0.55 }}>
+              <PhoneBtn className='hidden lg:flex' />
+            </motion.div>
 
             {/* Mobile menu toggle — single button, crossfade icons */}
-            <button
+            <motion.button
               className='ml-auto md:hidden relative w-7 h-7'
               onClick={() => setMenuOpen(v => !v)}
               aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ duration: 0.4, delay: 0.3 }}
             >
               <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300
                 ${menuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`}>
@@ -88,7 +93,7 @@ const Navbar = () => {
                   <path d="M2 2L26 26M26 2L2 26" stroke="white" strokeWidth="3" strokeLinecap="round" />
                 </svg>
               </span>
-            </button>
+            </motion.button>
           </div>
         </Container>
       </nav>

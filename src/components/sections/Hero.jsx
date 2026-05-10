@@ -1,15 +1,23 @@
+'use client'
 import Image from 'next/image'
-import React from 'react'
+import { motion } from 'framer-motion'
 import Container from '../layout/Container'
 import HeroMenu from './HeroMenu'
 import CTABtn from '../UI/CTABtn'
 import { useNavMenu } from '@/context/NavMenuContext'
 
-const MOBILE_PATH  = 'M-213 465.625V0H786.871C786.871 17.123 791.005 15.4511 752.534 79.8322C704.446 160.309 661.535 189.338 607.104 210.474C523.001 243.132 432.703 174.712 340.358 245.19C275.38 294.781 311.932 286.94 194.854 410.804C79.6051 532.733 -155.507 471.033 -213 465.625Z'
-const NAV_PATH     = 'M-149 465.625V0H850.871C850.871 17.123 855.005 15.4511 816.534 79.8322C768.446 160.309 725.535 189.338 671.104 210.474C587.001 243.132 496.703 174.712 404.358 245.19C339.38 294.781 375.932 286.94 258.854 410.804C143.605 532.733 -91.5074 471.033 -149 465.625Z'
+const MOBILE_PATH = 'M-213 465.625V0H786.871C786.871 17.123 791.005 15.4511 752.534 79.8322C704.446 160.309 661.535 189.338 607.104 210.474C523.001 243.132 432.703 174.712 340.358 245.19C275.38 294.781 311.932 286.94 194.854 410.804C79.6051 532.733 -155.507 471.033 -213 465.625Z'
+const NAV_PATH    = 'M-149 465.625V0H850.871C850.871 17.123 855.005 15.4511 816.534 79.8322C768.446 160.309 725.535 189.338 671.104 210.474C587.001 243.132 496.703 174.712 404.358 245.19C339.38 294.781 375.932 286.94 258.854 410.804C143.605 532.733 -91.5074 471.033 -149 465.625Z'
+
+const fadeUp = (delay = 0) => ({
+  initial: { opacity: 0, y: 22 },
+  animate: { opacity: 1, y: 0 },
+  transition: { duration: 0.6, delay, ease: [0.25, 0.1, 0.25, 1] },
+})
 
 const Hero = ({ title, subtitle, showShape = true }) => {
   const { menuOpen } = useNavMenu()
+
   return (
     <section className='relative w-full min-h-screen overflow-hidden' id='#home'>
       {showShape && (
@@ -39,7 +47,12 @@ const Hero = ({ title, subtitle, showShape = true }) => {
       </svg>
 
       {/* Mobile hero image */}
-      <div className='absolute right-0 bottom-35 w-67.5 h-67.5 md:hidden z-5 pb-20'>
+      <motion.div
+        className='absolute right-0 bottom-35 w-67.5 h-67.5 md:hidden z-5 pb-20'
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+      >
         <Image
           src={`/assets/hero/${showShape ? 'IMG.svg' : 'b2bmobilehero.png'}`}
           alt="hero students"
@@ -47,11 +60,16 @@ const Hero = ({ title, subtitle, showShape = true }) => {
           priority
           className='block md:hidden'
         />
-      </div>
+      </motion.div>
 
       {/* Desktop B2B hero image */}
       {!showShape && (
-        <div className='absolute right-50 bottom-0 w-154.25 h-136.75 hidden md:block z-5'>
+        <motion.div
+          className='absolute right-50 bottom-0 w-154.25 h-136.75 hidden md:block z-5'
+          initial={{ opacity: 0, x: 40 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.35, ease: [0.25, 0.1, 0.25, 1] }}
+        >
           <Image
             src="/assets/hero/b2bdesktophero.png"
             alt="hero businessman"
@@ -59,21 +77,29 @@ const Hero = ({ title, subtitle, showShape = true }) => {
             priority
             className='object-contain object-bottom-right'
           />
-        </div>
+        </motion.div>
       )}
 
       <div className='relative z-10 flex items-start min-h-screen pt-28 pb-20 md:items-center md:pt-32'>
         <Container>
           <div className='max-w-xl'>
-            <h1 className={`${showShape ? 'md:text-white' : 'md:text-blue-navy'} text-white font-extrabold text-[28px]
-            mt-9 md:mt-0 md:text-5xl leading-[1.1] mb-1.75 md:mb-4`}>
+            <motion.h1
+              className={`${showShape ? 'md:text-white' : 'md:text-blue-navy'} text-white font-extrabold text-[28px]
+              mt-9 md:mt-0 md:text-5xl leading-[1.1] mb-1.75 md:mb-4`}
+              {...fadeUp(0)}
+            >
               {title}
-            </h1>
-            <p className={`${showShape ? 'md:text-lila' : 'md:text-blue-grey'} text-lila text-sm
-            md:text-[23px] leading-[1.2] md:leading-[1.4] tracking-[0.02em] mb-5 md:mb-10`}>
+            </motion.h1>
+            <motion.p
+              className={`${showShape ? 'md:text-lila' : 'md:text-blue-grey'} text-lila text-sm
+              md:text-[23px] leading-[1.2] md:leading-[1.4] tracking-[0.02em] mb-5 md:mb-10`}
+              {...fadeUp(0.15)}
+            >
               {subtitle}
-            </p>
-            <CTABtn title="Vreau consultație gratuită!" />
+            </motion.p>
+            <motion.div {...fadeUp(0.3)}>
+              <CTABtn title="Vreau consultație gratuită!" />
+            </motion.div>
           </div>
         </Container>
       </div>
