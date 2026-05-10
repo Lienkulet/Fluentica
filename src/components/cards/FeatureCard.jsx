@@ -2,7 +2,7 @@ import React from 'react'
 
 const FeatureCard = ({ icon, title, description }) => {
   return (
-    <article className='border border-gray-100 shadow-xl px-3.75 py-5.75 md:px-8 md:py-8.75 rounded-[20px] 
+    <article className='bg-white border border-gray-100 shadow-xl px-3.75 py-5.75 md:px-8 md:py-8.75 rounded-[20px] 
       flex flex-row gap-3 md:gap-4.5'>
       <div className='shrink-0 w-13.5 h-20 md:w-14.5 [&_svg]:w-full [&_svg]:h-auto'>
         {icon}

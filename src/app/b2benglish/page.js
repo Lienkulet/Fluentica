@@ -5,6 +5,7 @@ import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Register from "@/components/sections/Register";
 import WhyOurCourses from "@/components/sections/WhyOurCourses";
+import WhyB2B from "@/components/sections/WhyB2B";
 
 const testimonials = [
   {
@@ -33,17 +34,15 @@ const testimonials = [
   },
 ]
 
-export default function Home() {
+export default function B2BEnglish() {
   return (
     <>
       <Hero />
-      <Courses />
-      <WhyUs />
-      <WhyOurCourses />
+      <WhyB2B />
       <Register 
-        img='/assets/register/register-girl.png'
-        title='Înscrie-te pentru o testare gratuită'
-        desc='Evaluăm nivelul tău de engleză și îți oferim toate detaliile despre curs, program și preț după testare.'
+        img='/assets/register/register-boy.png'
+        title='Solicită o evaluare gratuită pentru echipa ta'
+        desc='Evaluăm nivelul de engleză al echipei și îți oferim toate detaliile despre curs, program și preț.'
       />
       <Testimonials testimonials={testimonials} />
       <Gallery />
