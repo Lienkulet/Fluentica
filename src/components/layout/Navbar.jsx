@@ -15,7 +15,7 @@ import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
-  const { menuOpen, setMenuOpen } = useNavMenu()
+  const { menuOpen, setMenuOpen, heroInView } = useNavMenu()
   const pathname = usePathname()
   const isB2B = pathname === '/b2benglish'
 
@@ -103,14 +103,16 @@ const Navbar = () => {
         transition-all duration-300 ease-in-out
         ${menuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}>
 
-        {/* SVG background shape */}
-        {/* <Image
-          src='/assets/hero/navmobile.svg'
-          alt=''
-          width={375}
-          height={486}
-          className='object-contain pointer-events-none'
-        /> */}
+        {/* SVG background shape — shown only when hero is scrolled out of view */}
+        {!heroInView && (
+          <Image
+            src='/assets/hero/navmobile.svg'
+            alt=''
+            width={375}
+            height={486}
+            className='absolute inset-0 w-full h-full object-cover object-top pointer-events-none'
+          />
+        )}
 
         {/* Nav links — fade in after shape morph completes */}
         <ul className='absolute top-30 z-40 flex flex-col items-start justify-start flex-1 gap-2.5'>

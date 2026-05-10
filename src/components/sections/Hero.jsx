@@ -1,6 +1,7 @@
 'use client'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useRef, useEffect } from 'react'
 import Container from '../layout/Container'
 import HeroMenu from './HeroMenu'
 import CTABtn from '../UI/CTABtn'
@@ -16,10 +17,20 @@ const fadeUp = (delay = 0) => ({
 })
 
 const Hero = ({ title, subtitle, showShape = true }) => {
-  const { menuOpen } = useNavMenu()
+  const { menuOpen, setHeroInView } = useNavMenu()
+  const sectionRef = useRef(null)
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setHeroInView(entry.isIntersecting),
+      { threshold: 0 }
+    )
+    if (sectionRef.current) observer.observe(sectionRef.current)
+    return () => observer.disconnect()
+  }, [setHeroInView])
 
   return (
-    <section className='relative w-full min-h-screen overflow-hidden' id='#home'>
+    <section ref={sectionRef} className='relative w-full min-h-screen overflow-hidden' id='#home'>
       {showShape && (
         <Image
           src="/assets/layout/Hero.svg"
