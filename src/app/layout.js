@@ -2,6 +2,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import { NavMenuProvider } from "@/context/NavMenuContext";
 
 const urbanist = Urbanist({
   variable: "--font-urbanist",
@@ -20,9 +21,11 @@ export default function RootLayout({ children }) {
       className={`${urbanist.variable} h-full antialiased`}
     >
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <NavMenuProvider>
+          <Navbar />
+          {children}
+          <Footer />
+        </NavMenuProvider>
       </body>
     </html>
   );

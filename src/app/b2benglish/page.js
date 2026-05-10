@@ -1,10 +1,8 @@
-import Courses from "@/components/sections/Courses";
+'use client';
 import Hero from "@/components/sections/Hero";
-import WhyUs from "@/components/sections/WhyUs";
 import Gallery from "@/components/sections/Gallery";
 import Testimonials from "@/components/sections/Testimonials";
 import Register from "@/components/sections/Register";
-import WhyOurCourses from "@/components/sections/WhyOurCourses";
 import WhyB2B from "@/components/sections/WhyB2B";
 
 const testimonials = [
