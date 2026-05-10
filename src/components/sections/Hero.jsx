@@ -38,7 +38,7 @@ const Hero = ({ title, subtitle, showShape = true }) => {
 
       {/* Desktop B2B hero image */}
       {!showShape && (
-        <div className='absolute right-50 bottom-0 w-[50%] h-[70%] hidden md:block z-5'>
+        <div className='absolute right-50 bottom-0 w-154.25 h-136.75 hidden md:block z-5'>
           <Image
             src="/assets/hero/b2bdesktophero.png"
             alt="hero businessman"
@@ -66,7 +66,7 @@ const Hero = ({ title, subtitle, showShape = true }) => {
       </div>
 
       <div className='hidden md:block'>
-        <HeroMenu />
+        <HeroMenu showShape={!showShape} />
       </div>
     </section>
   )
