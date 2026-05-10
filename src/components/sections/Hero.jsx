@@ -20,13 +20,13 @@ const Hero = () => {
         alt="hero background"
         fill
         priority
-        className='object-contain object-top block md:hidden'
+        className={`object-contain object-top block md:hidden`}
       />
 
       {/* Mobile hero image */}
       <div className='absolute right-0 bottom-35 w-67.5 h-67.5 md:hidden z-5 pb-20'>
         <Image
-          src="/assets/hero/mobile-home/Mobile/IMG.svg"
+          src="/assets/hero/IMG.svg"
           alt="hero students"
           fill
           priority
