@@ -53,7 +53,7 @@ const WhyOurCourses = () => {
         </FadeInView>
 
         <div className='flex flex-col gap-5 md:gap-12.5 mt-12'>
-          <div className='grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-13.75'>
+          <div className='grid grid-cols-1 xl:grid-cols-2 gap-5 xl:gap-13.75'>
             {promos.map((p, i) => (
               <FadeInView key={i} delay={i * 0.12}>
                 <PromoCard icon={p.icon} title={p.title} description={p.description} />
@@ -61,7 +61,7 @@ const WhyOurCourses = () => {
             ))}
           </div>
 
-          <div className='grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-9.25'>
+          <div className='grid grid-cols-1 xl:grid-cols-3 gap-5 xl:gap-9.25'>
             {features.map((f, i) => (
               <FadeInView key={i} delay={i * 0.1}>
                 <FeatureCard icon={f.icon} title={f.title} description={f.description} />

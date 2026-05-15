@@ -13,7 +13,7 @@ const Footer = () => {
   return (
     <>
       {/* Desktop footer */}
-      <footer className='relative w-full hidden md:block'>
+      <footer className='relative w-full hidden xl:block'>
         <Image
           src="/assets/layout/Footer.svg"
           alt="footer"
@@ -81,7 +81,7 @@ const Footer = () => {
       </footer>
 
       {/* Mobile footer */}
-      <footer className='relative w-full md:hidden'>
+      <footer className='relative w-full xl:hidden'>
         <Image
           src="/assets/layout/FooterMobile.svg"
           alt="footer"
@@ -92,25 +92,25 @@ const Footer = () => {
         <div className='absolute inset-0 flex flex-col pb-5'>
           <div className='flex flex-col gap-7 flex-1 justify-center pl-[42%] pr-5 pt-10'>
             <FadeInView x={-20} y={0}>
-              <div className='overflow-hidden'>
+              <div className='w-40 md:w-52 lg:w-64 [&_svg]:w-full [&_svg]:h-auto overflow-hidden'>
                 <LogoIcon />
               </div>
             </FadeInView>
 
-            <div className='flex flex-col gap-5'>
+            <div className='flex flex-col gap-5 md:gap-10 lg:gap-15'>
               <FadeInView delay={0.1}>
                 <div>
-                  <p className='text-white font-semibold text-lg mb-3 leading-[100%] tracking-[1%]'>Contacte:</p>
+                  <p className='text-white font-semibold text-lg md:text-xl lg:text-4xl mb-3 md:mb-5 lg:mb-7 leading-[100%] tracking-[1%]'>Contacte:</p>
                   <ul className='flex flex-col gap-2.5'>
-                    <li className='flex items-center gap-3 text-lila text-sm font-regular leading-[150%] tracking-[1%]'>
+                    <li className='flex items-center gap-3 text-lila text-sm md:text-base lg:text-3xl font-regular leading-[150%] tracking-[1%]'>
                       <PhoneIcon />
                       +373 69 63 48 84
                     </li>
-                    <li className='flex items-center gap-3 text-lila text-sm font-regular leading-[150%] tracking-[1%]'>
+                    <li className='flex items-center gap-3 text-lila text-sm md:text-base lg:text-3xl font-regular leading-[150%] tracking-[1%]'>
                       <EmailIcon />
                       fluenticaenglish@gmail.com
                     </li>
-                    <li className='flex items-center gap-3 text-lila text-sm font-regular leading-[150%] tracking-[1%]'>
+                    <li className='flex items-center gap-3 text-lila text-sm md:text-base lg:text-3xl font-regular leading-[150%] tracking-[1%]'>
                       <HomeIcon />
                       str. G.-B. Bodoni 59
                     </li>
@@ -120,7 +120,7 @@ const Footer = () => {
 
               <FadeInView delay={0.2}>
                 <div>
-                  <p className='text-white font-semibold text-lg mb-3 leading-[100%] tracking-[1%]'>Suntem pe social media:</p>
+                  <p className='text-white font-semibold text-lg md:text-xl lg:text-4xl mb-3 leading-[100%] tracking-[1%]'>Suntem pe social media:</p>
                   <div className='flex items-center gap-5'>
                     <a href="https://instagram.com/fluentica.md" target="_blank" rel="noopener noreferrer" className='hover:opacity-70 transition-opacity duration-200'>
                       <InstagramIcon />
@@ -138,7 +138,7 @@ const Footer = () => {
           </div>
 
           <FadeInView delay={0.3} margin='0px'>
-            <p className='text-lila text-xs text-center w-full'>
+            <p className='text-lila text-xs md:text-sm text-center w-full'>
               © Toate drepturile sunt rezervate. Fluentica 2026.
             </p>
           </FadeInView>

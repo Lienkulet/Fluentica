@@ -38,16 +38,16 @@ const Register = ({ img, title, desc }) => {
   return (
     <section id='contact' className='py-10 md:py-20 bg-white'>
       <Container>
-        <div className='bg-blue-navy  rounded-[20px] md:rounded-[74px] px-5 pt-9.5 pb-9.5 md:pb-0 md:pl-25.25
-         md:pr-28.75 md:pt-28.75
-          flex flex-col md:flex-row md:items-end md:justify-between md:gap-16.75'>
+        <div className='bg-blue-navy rounded-[20px] xl:rounded-[74px] px-5 pt-9.5 pb-9.5 md:px-14 md:py-14 xl:pb-0 xl:pl-25.25
+         xl:pr-28.75 xl:pt-28.75
+          flex flex-col xl:flex-row xl:items-end xl:justify-between xl:gap-16.75'>
 
-          <FadeInView x={-24} y={0} className='flex flex-col gap-6 md:gap-14.5 md:pb-28.75 z-10 md:w-fit max-w-118.75'>
+          <FadeInView x={-24} y={0} className='flex flex-col gap-6 xl:gap-14.5 xl:pb-28.75 z-10 xl:w-fit xl:max-w-118.75'>
             <div>
-              <h2 className='text-white font-extrabold text-[28px] md:text-5xl leading-[1.1] tracking-normal mb-1.75 md:mb-5'>
+              <h2 className='text-white font-extrabold text-[28px] md:text-4xl lg:text-5xl leading-[1.1] tracking-normal mb-1.75 md:mb-5 md:text-center xl:text-start'>
                 {title}
               </h2>
-              <p className='text-lila text-sm md:text-xl leading-[1.2] md:leading-[1.4] tracking-[2%] font-normal'>
+              <p className='text-lila text-sm md:text-base lg:text-xl leading-[1.2] md:leading-[1.4] tracking-[2%] font-normal md:text-center xl:text-start'>
                 {desc}
               </p>
             </div>
@@ -106,7 +106,7 @@ const Register = ({ img, title, desc }) => {
               </form>
             )}
           </FadeInView>
-          <div className='hidden md:flex relative w-117.25 h-153.5'>
+          <div className='hidden xl:flex relative w-117.25 h-153.5'>
             <Image
               src={img}
               alt='Register'

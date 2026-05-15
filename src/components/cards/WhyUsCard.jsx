@@ -5,7 +5,7 @@ const WhyUsCard = ({ img, title, desc }) => {
   return (
     <article className='bg-white rounded-[20px] overflow-hidden shadow-sm
       flex flex-row md:block gap-4 px-4 py-4 md:px-7.5 md:py-8'>
-      <div className='relative w-25 h-25 md:w-53.75 md:h-53.75 shrink-0 rounded-[7px] md:rounded-[17px] overflow-hidden'>
+      <div className='relative w-25 h-25 md:w-full md:h-53.75 xl:w-53.75 shrink-0 rounded-[7px] md:rounded-[17px] overflow-hidden'>
         <Image src={img} alt={title} fill className='object-cover' />
       </div>
       <div className='flex-1 flex flex-col justify-center md:justify-start md:mt-5'>

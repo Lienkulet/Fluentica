@@ -96,14 +96,14 @@ const Hero = ({ title, subtitle, showShape = true }) => {
           <div className='max-w-xl'>
             <motion.h1
               className={`${showShape ? 'md:text-white' : 'md:text-blue-navy'} text-white font-extrabold text-[28px]
-              mt-9 md:mt-0 md:text-5xl leading-[1.1] mb-1.75 md:mb-4`}
+              mt-9 md:mt-0 md:text-4xl lg:text-5xl leading-[1.1] mb-1.75 md:mb-4`}
               {...fadeUp(0)}
             >
               {title}
             </motion.h1>
             <motion.p
               className={`${showShape ? 'md:text-lila' : 'md:text-blue-grey'} text-lila text-sm
-              md:text-[23px] leading-[1.2] md:leading-[1.4] tracking-[0.02em] mb-5 md:mb-10`}
+              md:text-lg lg:text-[23px] leading-[1.2] md:leading-[1.4] tracking-[0.02em] mb-5 md:mb-10`}
               {...fadeUp(0.15)}
             >
               {subtitle}

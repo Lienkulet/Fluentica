@@ -45,7 +45,7 @@ const WhyUs = () => {
             />
           </FadeInView>
 
-          <div className='grid grid-cols-1 md:grid-cols-4 gap-2.75 md:gap-7.75'>
+          <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-2.75 md:gap-5 xl:gap-7.75'>
             {reasons.map((r, i) => (
               <FadeInView key={r.title} delay={i * 0.1}>
                 <WhyUsCard img={r.img} title={r.title} desc={r.desc} />

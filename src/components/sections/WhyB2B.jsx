@@ -46,21 +46,21 @@ const bottomCards = [
 
 const WhyB2B = () => {
   return (
-    <section className='-mt-14.25 md:-mt-92' id='despre'>
+    <section className='-mt-14.25 lg:-mt-92' id='despre'>
       <B2bTop />
       <div className='bg-blue-navy py-41 -mt-2'>
         <Container>
           <div className='flex flex-col gap-11'>
 
             {/* Row 1: text | B2BPromoCard | B2BPromoCard */}
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-9 items-start'>
+            <div className='grid grid-cols-1 xl:grid-cols-3 gap-9 items-start'>
               <FadeInView x={-24} y={0}>
-                <div className='md:w-[384px] flex flex-col gap-5 align-top'>
-                  <h2 className='text-white text-center md:text-start font-extrabold text-[28px]
-                  md:w-[384px] max-h-39.75 md:text-[48px] leading-[110%] tracking-[-1%]'>
+                <div className='lg:w-[384px] flex flex-col gap-5 align-top'>
+                  <h2 className='text-white text-center lg:text-start font-extrabold text-[28px]
+                  lg:w-[384px] max-h-39.75 lg:text-4xl xl:text-[48px] leading-[110%] tracking-[-1%]'>
                     De ce cursurile de engleză Fluentica dau rezultate
                   </h2>
-                  <p className='text-lila text-center md:text-start text-sm font-medium md:text-xl
+                  <p className='text-lila text-center lg:text-start text-sm font-medium lg:text-base xl:text-xl
                   leading-[1.4] tracking-[2%]'>
                     Programe de Business English adaptate companiilor, cu focus pe comunicare practică și
                     progres măsurabil.
@@ -75,7 +75,7 @@ const WhyB2B = () => {
             </div>
 
             {/* Row 2: feature | feature | feature */}
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-9'>
+            <div className='grid grid-cols-1 xl:grid-cols-3 gap-9'>
               {bottomCards.map((c, i) => (
                 <FadeInView key={i} delay={i * 0.1}>
                   <FeatureCard icon={c.icon} title={c.title} description={c.description} />

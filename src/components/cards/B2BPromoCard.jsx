@@ -2,8 +2,8 @@ import React from 'react'
 import LightningIcon from '../icons/LightningIcon'
 
 const B2BPromoCard = ({ icon, title, description, promo = false }) => (
-  <article className='bg-white border border-gray-100 shadow-xl px-5 py-6 md:px-8 md:py-8.75 
-  rounded-[20px] flex flex-col gap-4 md:w-93 md:h-84.75'>
+  <article className='bg-white border border-gray-100 shadow-xl px-5 py-6 md:px-8 md:py-8.75
+  rounded-[20px] flex flex-col gap-4'>
     {promo && (
       <span className='flex items-center gap-2 bg-orange1 px-2 py-1 md:px-2.75 md:py-1.75 rounded-full 
       w-fit text-white text-sm md:text-lg font-extrabold leading-normal'>

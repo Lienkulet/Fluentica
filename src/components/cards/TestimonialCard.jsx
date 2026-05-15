@@ -6,7 +6,7 @@ const TestimonialCard = ({ name, quote }) => {
   const initials = name.split(' ').map(n => n[0]).join('')
 
   return (
-    <article className='bg-white rounded-[20px] h-63.5 md:h-75.5 px-6 pt-6 pb-6 md:px-12.5 md:pt-8.75 md:pb-11.75 drop-shadow-sm flex flex-col gap-2.5'>
+    <article className='bg-white rounded-[20px] h-63.5 md:h-75.5 xl:h-85 px-6 pt-6 pb-6 md:px-12.5 md:pt-8.75 md:pb-11.75 drop-shadow-sm flex flex-col gap-2.5'>
       <div className='flex items-center justify-between'>
         <div className='flex items-start gap-[11.5px]'>
           <div className='w-19.5 h-19.5 rounded-full bg-lila flex items-center justify-center shrink-0'>

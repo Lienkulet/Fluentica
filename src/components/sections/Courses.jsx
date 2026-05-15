@@ -46,7 +46,7 @@ const Courses = () => {
         </FadeInView>
 
         {/* Mobile layout — single column */}
-        <div className='md:hidden flex flex-col gap-5'>
+        <div className='xl:hidden flex flex-col gap-5'>
           {courses.map((c, i) => (
             <FadeInView key={c.title} delay={i * 0.08}>
               <CourseCard {...c} />
@@ -58,7 +58,7 @@ const Courses = () => {
         </div>
 
         {/* Desktop layout */}
-        <div className='hidden md:flex flex-col gap-13 z-20'>
+        <div className='hidden xl:flex flex-col gap-13 z-20'>
           <div className='grid grid-cols-3 gap-8.5'>
             {courses.slice(0, 3).map((c, i) => (
               <FadeInView key={c.title} delay={i * 0.1}>
@@ -81,9 +81,9 @@ const Courses = () => {
           </FadeInView>
         </div>
 
-        <FadeInView className='flex justify-center mt-6 md:mt-12 z-20 relative'>
-          <CTABtn title="Află ce curs ți se potrivește" className='hidden md:flex' />
-          <CTABtn title="Vreau consultație gratuită!" className='flex md:hidden w-full' />
+        <FadeInView className='flex justify-center mt-6 lg:mt-12 z-20 relative'>
+          <CTABtn title="Află ce curs ți se potrivește" className='hidden xl:flex' />
+          <CTABtn title="Vreau consultație gratuită!" className='flex xl:hidden w-full' />
         </FadeInView>
       </Container>
     </section>
