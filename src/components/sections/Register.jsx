@@ -5,16 +5,50 @@ import React, { useState } from 'react'
 import Container from '../layout/Container'
 import FadeInView from '../UI/FadeInView'
 
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+
 const Register = ({ img, title, desc }) => {
   const [form, setForm] = useState({ name: '', phone: '', email: '' })
+  const [errors, setErrors] = useState({ name: '', phone: '', email: '' })
   const [status, setStatus] = useState('idle') // idle | loading | success | error
 
+  const validate = (name, value) => {
+    if (name === 'name') {
+      if (!value) return 'Numele este obligatoriu.'
+      if (/\d/.test(value)) return 'Numele nu poate conține cifre.'
+      return ''
+    }
+    if (name === 'phone') {
+      if (!value) return 'Numărul de telefon este obligatoriu.'
+      if (!/^\d+$/.test(value)) return 'Numărul de telefon poate conține doar cifre.'
+      if (value.length > 9) return 'Numărul de telefon poate avea maxim 9 cifre.'
+      return ''
+    }
+    if (name === 'email') {
+      if (!value) return 'E-mailul este obligatoriu.'
+      if (!emailRegex.test(value)) return 'Adresa de e-mail nu este validă.'
+      return ''
+    }
+    return ''
+  }
+
   const handleChange = (e) => {
-    setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
+    const { name, value } = e.target
+    if (name === 'phone' && value && !/^\d*$/.test(value)) return
+    if (name === 'phone' && value.length > 9) return
+    setForm((prev) => ({ ...prev, [name]: value }))
+    setErrors((prev) => ({ ...prev, [name]: validate(name, value) }))
   }
 
   const handleSubmit = async (e) => {
     e.preventDefault()
+    const newErrors = {
+      name: validate('name', form.name),
+      phone: validate('phone', form.phone),
+      email: validate('email', form.email),
+    }
+    setErrors(newErrors)
+    if (Object.values(newErrors).some(Boolean)) return
     setStatus('loading')
 
     try {
@@ -58,39 +92,45 @@ const Register = ({ img, title, desc }) => {
               </p>
             ) : (
               <form className='flex flex-col gap-3.5 md:gap-5.5' onSubmit={handleSubmit}>
-                <input
-                  type='text'
-                  name='name'
-                  value={form.name}
-                  onChange={handleChange}
-                  placeholder='Nume, Prenume'
-                  required
-                  className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
-                   bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                   text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
-                />
-                <input
-                  type='tel'
-                  name='phone'
-                  value={form.phone}
-                  onChange={handleChange}
-                  placeholder='Număr de telefon'
-                  required
-                  className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
-                   bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                   text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
-                />
-                <input
-                  type='email'
-                  name='email'
-                  value={form.email}
-                  onChange={handleChange}
-                  placeholder='E-mail'
-                  required
-                  className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
-                   bg-white text-blue-grey placeholder:text-blue-grey outline-none
-                   text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
-                />
+                <div>
+                  <input
+                    type='text'
+                    name='name'
+                    value={form.name}
+                    onChange={handleChange}
+                    placeholder='Nume, Prenume'
+                    className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
+                     bg-white text-blue-grey placeholder:text-blue-grey outline-none
+                     text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
+                  />
+                  {errors.name && <p className='text-red-400 text-xs mt-1 pl-4'>{errors.name}</p>}
+                </div>
+                <div>
+                  <input
+                    type='tel'
+                    name='phone'
+                    value={form.phone}
+                    onChange={handleChange}
+                    placeholder='Număr de telefon'
+                    className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
+                     bg-white text-blue-grey placeholder:text-blue-grey outline-none
+                     text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
+                  />
+                  {errors.phone && <p className='text-red-400 text-xs mt-1 pl-4'>{errors.phone}</p>}
+                </div>
+                <div>
+                  <input
+                    type='email'
+                    name='email'
+                    value={form.email}
+                    onChange={handleChange}
+                    placeholder='E-mail'
+                    className='w-full pl-6.75 pr-11.25 py-3.5 rounded-[100px]
+                     bg-white text-blue-grey placeholder:text-blue-grey outline-none
+                     text-sm md:text-base font-medium leading-[1.4] tracking-[2%]'
+                  />
+                  {errors.email && <p className='text-red-400 text-xs mt-1 pl-4'>{errors.email}</p>}
+                </div>
                 {status === 'error' && (
                   <p className='text-red-400 text-sm'>A apărut o eroare. Încearcă din nou.</p>
                 )}
