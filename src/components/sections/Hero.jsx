@@ -30,7 +30,7 @@ const Hero = ({ title, subtitle, showShape = true }) => {
   }, [setHeroInView])
 
   return (
-    <section ref={sectionRef} className='relative w-full min-h-screen overflow-hidden' id='#home'>
+    <section ref={sectionRef} className='relative w-full min-h-121.5 md:min-h-screen overflow-hidden' id='#home'>
       {showShape && (
         <Image
           src="/assets/layout/Hero.svg"
@@ -59,7 +59,7 @@ const Hero = ({ title, subtitle, showShape = true }) => {
 
       {/* Mobile hero image */}
       <motion.div
-        className='absolute right-0 bottom-35 w-67.5 h-67.5 md:hidden z-5 pb-20'
+        className='absolute right-0 bottom-0 w-67.5 h-67.5 md:hidden z-5'
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         transition={{ duration: 0.8, delay: 0.4 }}
@@ -91,7 +91,7 @@ const Hero = ({ title, subtitle, showShape = true }) => {
         </motion.div>
       )}
 
-      <div className='relative z-10 flex items-start min-h-screen pt-28 pb-20 md:items-center md:pt-32'>
+      <div className='relative z-10 flex items-start min-h-121.5 md:min-h-screen pt-28 pb-20 md:items-center md:pt-32'>
         <Container>
           <div className='max-w-xl'>
             <motion.h1
