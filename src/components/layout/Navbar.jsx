@@ -39,7 +39,7 @@ const Navbar = () => {
         <Container>
           <div className='flex flex-row items-center w-full gap-20'>
             <motion.div className='flex xl:hidden' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-              <Link href='/'><LogoIcon isB2B={isB2B && !scrolled} /></Link>
+              <Link href='/'><LogoIcon isB2B={false} /></Link>
             </motion.div>
             <motion.div className='hidden xl:flex' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
               <Link href='/'><LogoIcon isB2B={isB2B && !scrolled} /></Link>
@@ -83,9 +83,9 @@ const Navbar = () => {
               <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300
                 ${menuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`}>
                 <svg width="28" height="20" viewBox="0 0 28 20" fill="none">
-                  <rect y="0" width="28" height="2.5" rx="1.25" fill={isB2B && !scrolled ? '#1801AE' : 'white'} />
-                  <rect y="8.75" width="28" height="2.5" rx="1.25" fill={isB2B && !scrolled ? '#1801AE' : 'white'} />
-                  <rect y="17.5" width="28" height="2.5" rx="1.25" fill={isB2B && !scrolled ? '#1801AE' : 'white'} />
+                  <rect y="0" width="28" height="2.5" rx="1.25" fill="white" />
+                  <rect y="8.75" width="28" height="2.5" rx="1.25" fill="white" />
+                  <rect y="17.5" width="28" height="2.5" rx="1.25" fill="white" />
                 </svg>
               </span>
               <span className={`absolute inset-0 flex items-center justify-center transition-all duration-300
