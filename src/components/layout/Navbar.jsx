@@ -41,10 +41,10 @@ const Navbar = () => {
         <Container>
           <div className='flex flex-row items-center w-full gap-20'>
             <motion.div className='flex xl:hidden' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-              <Link href='/'><LogoIcon isB2B={false} /></Link>
+              <Link href='/' onClick={() => setMenuOpen(false)}><LogoIcon isB2B={false} /></Link>
             </motion.div>
             <motion.div className='hidden xl:flex' initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}>
-              <Link href='/'><LogoIcon isB2B={isB2B && !scrolled} /></Link>
+              <Link href='/' onClick={() => setMenuOpen(false)}><LogoIcon isB2B={isB2B && !scrolled} /></Link>
             </motion.div>
 
             {/* Desktop nav links */}
