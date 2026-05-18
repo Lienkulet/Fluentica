@@ -4,7 +4,6 @@ import React, { useEffect, useState } from 'react'
 const MOBILE_PATH = 'M-213 465.625V0H786.871C786.871 17.123 791.005 15.4511 752.534 79.8322C704.446 160.309 661.535 189.338 607.104 210.474C523.001 243.132 432.703 174.712 340.358 245.19C275.38 294.781 311.932 286.94 194.854 410.804C79.6051 532.733 -155.507 471.033 -213 465.625Z'
 const NAV_PATH    = 'M-149 465.625V0H850.871C850.871 17.123 855.005 15.4511 816.534 79.8322C768.446 160.309 725.535 189.338 671.104 210.474C587.001 243.132 496.703 174.712 404.358 245.19C339.38 294.781 375.932 286.94 258.854 410.804C143.605 532.733 -91.5074 471.033 -149 465.625Z'
 import Link from 'next/link'
-import Image from 'next/image'
 import Container from './Container'
 import LogoIcon from '../icons/LogoIcon'
 import PhoneBtn from '../UI/PhoneBtn'
@@ -104,8 +103,7 @@ const Navbar = () => {
 
       {/* Mobile Menu — always mounted, animated in/out */}
       <div className={`fixed inset-0 z-40 xl:hidden flex flex-col overflow-hidden
-        transition-all duration-300 ease-in-out
-        ${menuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}>
+        ${menuOpen ? 'pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
 
         {/* Morphing shape — only when scrolled (hero handles it when at top) */}
         {scrolled && (
@@ -115,36 +113,24 @@ const Navbar = () => {
             preserveAspectRatio="xMidYMin meet"
             fill="none"
           >
-            <path
-              d={menuOpen ? NAV_PATH : MOBILE_PATH}
+            <motion.path
+              animate={{ d: menuOpen ? NAV_PATH : MOBILE_PATH }}
+              transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
               fill="#1801AE"
-              style={{ transition: 'd 0.35s cubic-bezier(0.4, 0, 0.2, 1)' }}
             />
           </svg>
         )}
 
-        {/* Extra background image — only when scrolled */}
-        {scrolled && (
-          <Image
-            src='/assets/hero/navmobile.svg'
-            alt=''
-            width={375}
-            height={486}
-            className='absolute inset-0 w-full h-full object-cover object-top pointer-events-none'
-          />
-        )}
-
-        {/* Nav links — fade in after shape morph completes */}
+        {/* Nav links */}
         <ul className='absolute top-30 z-40 flex flex-col items-start justify-start flex-1 gap-2.5'>
           {[
-            { el: <Link href='/' onClick={() => setMenuOpen(false)}>AFLĂ NIVELUL</Link>, delay: 'delay-[350ms]' },
-            { el: <a href='#cursuri' onClick={() => setMenuOpen(false)}>CURSURI</a>, delay: 'delay-[390ms]' },
-            { el: <Link href='/b2benglish' onClick={() => setMenuOpen(false)}>B2B ENGLISH</Link>, delay: 'delay-[430ms]' },
-            { el: <a href='#despre' onClick={() => setMenuOpen(false)}>DESPRE NOI</a>, delay: 'delay-[470ms]' },
-            { el: <a href='#recenzii' onClick={() => setMenuOpen(false)}>RECENZII</a>, delay: 'delay-[510ms]' },
-          ].map(({ el, delay }, i) => (
-            <li key={i} className={`transition-opacity duration-200 ease-out ${delay}
-              ${menuOpen ? 'opacity-100' : 'opacity-0'}`}>
+            <Link href='/' onClick={() => setMenuOpen(false)}>AFLĂ NIVELUL</Link>,
+            <a href='#cursuri' onClick={() => setMenuOpen(false)}>CURSURI</a>,
+            <Link href='/b2benglish' onClick={() => setMenuOpen(false)}>B2B ENGLISH</Link>,
+            <a href='#despre' onClick={() => setMenuOpen(false)}>DESPRE NOI</a>,
+            <a href='#recenzii' onClick={() => setMenuOpen(false)}>RECENZII</a>,
+          ].map((el, i) => (
+            <li key={i}>
               <span className='text-white text-base font-medium tracking-widest hover:text-orange1
                 transition-colors duration-200 px-8 block whitespace-nowrap'>
                 {el}
@@ -153,8 +139,7 @@ const Navbar = () => {
           ))}
 
           {/* Social + phone */}
-          <li className={`transition-opacity duration-300 ease-out delay-200
-            ${menuOpen ? 'opacity-100' : 'opacity-0'}`}>
+          <li>
             <div className='relative z-10 bg-orange1 rounded-r-[17px] flex flex-col items-start gap-4
               py-4.25 pl-6 pr-3.5'>
               <Link href="https://instagram.com/fluentica.md" target="_blank" rel="noopener noreferrer"

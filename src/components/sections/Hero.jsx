@@ -49,10 +49,10 @@ const Hero = ({ title, subtitle, showShape = true }) => {
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
-        <path
-          d={menuOpen ? NAV_PATH : MOBILE_PATH}
+        <motion.path
+          animate={{ d: menuOpen ? NAV_PATH : MOBILE_PATH }}
+          transition={{ duration: 0.35, ease: [0.4, 0, 0.2, 1] }}
           fill="#1801AE"
-          style={{ transition: 'd 0.35s cubic-bezier(0.4, 0, 0.2, 1)' }}
         />
       </svg>
 
