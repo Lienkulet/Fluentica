@@ -41,9 +41,9 @@ const Hero = ({ title, subtitle, showShape = true }) => {
         />
       )}
 
-      {/* Mobile background — morphs into nav menu shape when menu opens */}
+      {/* Mobile background — morphs when menu opens */}
       <svg
-        className={`absolute inset-0 w-full h-full block md:hidden transition-[z-index] duration-0 ${menuOpen ? 'z-20' : 'z-0'}`}
+        className={`absolute inset-0 w-full h-full block md:hidden ${menuOpen ? 'z-20' : 'z-0'}`}
         viewBox="0 0 360 486"
         preserveAspectRatio="xMidYMin meet"
         fill="none"
@@ -52,7 +52,6 @@ const Hero = ({ title, subtitle, showShape = true }) => {
         <path
           d={menuOpen ? NAV_PATH : MOBILE_PATH}
           fill="#1801AE"
-          className={`${menuOpen ? 'z-20 animate-morph-nav' : 'z-20 animate-morph-mobile'} transition-all duration-300 ease-in-out`}
           style={{ transition: 'd 0.35s cubic-bezier(0.4, 0, 0.2, 1)' }}
         />
       </svg>

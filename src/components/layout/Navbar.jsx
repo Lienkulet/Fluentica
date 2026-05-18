@@ -1,5 +1,8 @@
 'use client'
 import React, { useEffect, useState } from 'react'
+
+const MOBILE_PATH = 'M-213 465.625V0H786.871C786.871 17.123 791.005 15.4511 752.534 79.8322C704.446 160.309 661.535 189.338 607.104 210.474C523.001 243.132 432.703 174.712 340.358 245.19C275.38 294.781 311.932 286.94 194.854 410.804C79.6051 532.733 -155.507 471.033 -213 465.625Z'
+const NAV_PATH    = 'M-149 465.625V0H850.871C850.871 17.123 855.005 15.4511 816.534 79.8322C768.446 160.309 725.535 189.338 671.104 210.474C587.001 243.132 496.703 174.712 404.358 245.19C339.38 294.781 375.932 286.94 258.854 410.804C143.605 532.733 -91.5074 471.033 -149 465.625Z'
 import Link from 'next/link'
 import Image from 'next/image'
 import Container from './Container'
@@ -15,7 +18,7 @@ import { motion } from 'framer-motion'
 
 const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
-  const { menuOpen, setMenuOpen, heroInView } = useNavMenu()
+  const { menuOpen, setMenuOpen } = useNavMenu()
   const pathname = usePathname()
   const isB2B = pathname === '/b2benglish'
 
@@ -104,8 +107,24 @@ const Navbar = () => {
         transition-all duration-300 ease-in-out
         ${menuOpen ? 'translate-y-0 opacity-100 pointer-events-auto' : '-translate-y-full opacity-0 pointer-events-none'}`}>
 
-        {/* SVG background shape — shown only when hero is scrolled out of view */}
-        {!heroInView && (
+        {/* Morphing shape — only when scrolled (hero handles it when at top) */}
+        {scrolled && (
+          <svg
+            className='absolute inset-0 w-full h-full pointer-events-none'
+            viewBox="0 0 360 486"
+            preserveAspectRatio="xMidYMin meet"
+            fill="none"
+          >
+            <path
+              d={menuOpen ? NAV_PATH : MOBILE_PATH}
+              fill="#1801AE"
+              style={{ transition: 'd 0.35s cubic-bezier(0.4, 0, 0.2, 1)' }}
+            />
+          </svg>
+        )}
+
+        {/* Extra background image — only when scrolled */}
+        {scrolled && (
           <Image
             src='/assets/hero/navmobile.svg'
             alt=''
