@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import React from 'react'
 import LogoIcon from '../icons/LogoIcon'
 import PhoneIcon from '../icons/PhoneIcon'
@@ -70,9 +71,11 @@ const Footer = () => {
               </div>
 
               <FadeInView delay={0.3} margin='0px'>
-                <p className='text-lila text-sm mb-4.25'>
-                  © Toate drepturile sunt rezervate. FLUENTICA 2026.
-                </p>
+                <div className='flex flex-row gap-1 mb-4.25'>
+                  <p className='text-lila text-sm'>© Toate drepturile sunt rezervate. FLUENTICA 2026.</p>
+                  <Link href='/terms' className='text-lila text-sm hover:text-white underline transition-colors duration-200'>Termeni și Condiții</Link>
+                  <Link href='/cookie-policy' className='text-lila text-sm hover:text-white underline transition-colors duration-200'>Politica de Cookies</Link>
+                </div>
               </FadeInView>
             </div>
 
@@ -138,9 +141,13 @@ const Footer = () => {
           </div>
 
           <FadeInView delay={0.3} margin='0px'>
-            <p className='text-lila text-xs md:text-sm text-center w-full'>
-              © Toate drepturile sunt rezervate. Fluentica 2026.
-            </p>
+            <div className='flex flex-col items-center gap-1'>
+              <p className='text-lila text-xs md:text-sm text-center w-full'>© Toate drepturile sunt rezervate. Fluentica 2026.</p>
+              <div className='flex flex-row gap-1'>
+                <Link href='/terms' className='text-lila text-xs md:text-sm hover:text-white underline transition-colors duration-200'>Termeni și Condiții</Link>
+                <Link href='/cookie-policy' className='text-lila text-xs md:text-sm hover:text-white underline transition-colors duration-200'>Politica de Cookies</Link>
+              </div>
+            </div>
           </FadeInView>
         </div>
       </footer>

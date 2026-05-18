@@ -19,7 +19,7 @@ const Navbar = () => {
   const [scrolled, setScrolled] = useState(false)
   const { menuOpen, setMenuOpen } = useNavMenu()
   const pathname = usePathname()
-  const isB2B = pathname === '/b2benglish'
+  const isB2B = pathname === '/b2benglish' || pathname === '/terms' || pathname === '/cookie-policy'
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 10)

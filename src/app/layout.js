@@ -2,6 +2,7 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/layout/Navbar";
 import Footer from "@/components/layout/Footer";
+import CookieBanner from "@/components/UI/CookieBanner";
 import { NavMenuProvider } from "@/context/NavMenuContext";
 
 const urbanist = Urbanist({
@@ -101,6 +102,7 @@ export default function RootLayout({ children }) {
           <Navbar />
           {children}
           <Footer />
+          <CookieBanner />
         </NavMenuProvider>
       </body>
     </html>
