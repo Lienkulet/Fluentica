@@ -14,7 +14,7 @@ const TestimonialCard = ({ name, quote }) => {
           </div>
           <div className='mr-[15.5px]'>
             <p className='text-blue-navy font-semibold text-xl leading-[100%] tracking-[1%]'>{name}</p>
-            <p className='text-blue-grey2 text-xs tracking-[3%] leading-normal font-normal mt-1.25 mb-2.75'>Student FLUENTICA</p>
+            <p className='text-blue-grey2 text-xs tracking-[3%] leading-normal font-normal mt-1.25 mb-2.75'>Studentǎ FLUENTICA</p>
             <div className='flex items-center gap-1'>
               {Array.from({ length: 5 }).map((_, i) => <StarIcon key={i} />)}
             </div>
