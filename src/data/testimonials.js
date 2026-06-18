@@ -6,18 +6,23 @@ export const testimonials = [
   },
   {
     name: 'Elena Negarǎ',
-    url: '/assets/testimonials/test2.PNG',
+    url: '/assets/testimonials/test5.PNG',
     quote: '„Lecțiile sunt interesante, desfășurate într-o atmosferă prietenoasă și confortabilă. Datorită abordării individuale, fiica mea a devenit mult mai încrezătoare în utilizarea limbii engleze, și-a îmbogățit considerabil vocabularul și și-a îmbunătățit cunoștințele de gramatică.”',
   },
   {
     name: 'Andreea Cojocaru',
-    url: '/assets/testimonials/test3.PNG',
+    url: '/assets/testimonials/test2.PNG',
     quote: '„Mă pregăteam pentru examenul Cambridge și aveam nevoie de îndrumare clară. Mi-a plăcut că am primit feedback concret și am înțeles exact ce trebuie să îmbunătățesc.”',
   },
   {
     name: 'Cristina Damian',
     url: '/assets/testimonials/test4.PNG',
     quote: '„Nu pot decât să vă mulțumesc pentru tot ce faceți. Sunteți o persoană care inspiră prin profesionalism, răbdare și energie. Mă bucur că încă există oameni care pun atât de mult suflet în ceea ce fac.”',
+  },
+  {
+    name: 'Testimonial 5',
+    url: '/assets/testimonials/test3.PNG',
+    quote: '„Mulțumesc, vă mulțumesc pentru orele de engleză pe care mi le-ați oferit. M-au ajutat să înțeleg mai bine materia și să-mi îmbunătățesc cunoștințele. Mi-a plăcut modul în care explicați și faptul că aveți răbdare. Apreciez tot efortul depus și timpul acordat. Mulțumesc pentru tot!"',
   },
   // {
   //   name: 'Ioana Rusu',

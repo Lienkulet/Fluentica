@@ -30,12 +30,14 @@ const Testimonials = ({ testimonials }) => {
               </FadeInView>
             ))}
           </div>
-          {/* Card 3 alone in right column */}
-          {testimonials[2] && (
-            <FadeInView delay={0.1}>
-              <TestimonialCard name={testimonials[2].name} quote={testimonials[2].quote} img={testimonials[2].url} />
-            </FadeInView>
-          )}
+          {/* Cards 3 & 5 (tall) in right column */}
+          <div className='flex flex-col gap-4'>
+            {[testimonials[2], testimonials[4]].filter(Boolean).map((t, i) => (
+              <FadeInView key={t.name} delay={i * 0.1}>
+                <TestimonialCard name={t.name} quote={t.quote} img={t.url} />
+              </FadeInView>
+            ))}
+          </div>
         </div>
 
         {/* Mobile slider */}
